@@ -9,6 +9,7 @@ export default defineConfig({
     hostname: "https://docs.docubench.ai",
   },
   themeConfig: {
+    logo: "/images/logo_128x128.png",
     siteTitle: "DocuBench Manual",
     search: {
       provider: "local",
@@ -61,6 +62,9 @@ export default defineConfig({
     docFooter: {
       prev: "Previous",
       next: "Next",
+    },
+    footer: {
+      copyright: "Copyright © 2026 DocuBench. All rights reserved.",
     },
   },
 });
