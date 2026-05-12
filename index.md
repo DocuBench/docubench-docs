@@ -12,9 +12,9 @@ hero:
 
 features:
   - title: Connect clients
-    details: Configure Codex CLI, Claude Code, and other MCP clients for DocuBench.
+    details: Configure Codex, Claude Code, and other MCP clients for DocuBench.
   - title: Use browser workbenches
-    details: Learn how workbenches, tabs, site agents, and tool permissions fit together.
+    details: Learn how workbenches, MCP tabs, site instruction, and tool permissions fit together.
   - title: Stay in control
     details: Understand approvals, navigation limits, and safe browser automation behavior.
 ---

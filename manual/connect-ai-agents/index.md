@@ -8,23 +8,24 @@ Each client setup guide uses the same values from DocuBench:
 - MCP endpoint URL, for example `http://localhost:8286/mcp/demo/`
 - Bearer token
 
-> Screenshot placeholder: Workbench endpoint tab with copy buttons for the MCP
-> URL and bearer token.
+![System and MCP Config](/images/connect-ai-agents/mcp-config.png)
 
-## Available Guides
-
-- [Codex CLI](./codex-cli.md)
-- [Claude Code](./claude-code.md)
+You can use "Copy URL" and "Copy" buttons to copy the values and paste to your
+MCP server config.
 
 ## General Setup Pattern
 
-1. Start the DocuBench workbench.
-2. Copy the workbench MCP endpoint URL.
+1. In AI Agent, add a new MCP server and select "Streamable HTTP" type.
+2. Copy the workbench MCP endpoint URL and set as server URL.
 3. Copy the bearer token.
-4. Add a new HTTP MCP server in your AI client.
-5. Set the `Authorization` header to `Bearer <token>`.
-6. Restart or refresh the AI client session.
-7. Confirm the DocuBench tools are listed.
+4. Set the `Authorization` header to `Bearer <token>`.
+5. Restart or refresh the AI client session.
+6. Confirm the DocuBench tools are listed.
+
+## Available Guides
+
+- [Codex Application and CLI](./codex.md)
+- [Claude Code](./claude-code.md)
 
 ## Connection Notes
 

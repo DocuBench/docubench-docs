@@ -8,27 +8,20 @@ This manual covers setup and usage for DocuBench users.
 
 An AI agent or MCP client such as Codex Application, Codex CLI or Claude Code.
 
-## Basic Flow
-
-1. Open DocuBench.
-2. Create or select a workbench.
-3. Start the workbench.
-4. Copy the MCP endpoint URL.
-5. Copy the bearer token.
-6. Add the MCP server to your AI client.
-7. Start a new AI client session and verify that DocuBench tools are available.
+## Tutorial
 
 DocuBench ships with a Demo workbench configuration. The first time you start the app,
-a tutorial will guide you through the basic flow and concepts:
+a tutorial will guide you through the basic setup and concepts:
 
-- System Configuration and Workbench Configuration
-- Navigation Control and Allow / Deny List
-- Navigation Approval Request and Audit
-- Site Agent and Site Instruction
+- System configuration and workbench configuration
+- Navigation control and allow / deny list
+- Connect AI agent to workbench
+- Navigation approval request and audit
+- MCP tabs and site instruction
 
-## Choose an AI Client
+## Choose an AI Agent
 
-Start with the client you already use. Each client has its own configuration
+Start with the AI agent you already use. Each agent has its own configuration
 format, but all of them need the same two DocuBench values:
 
 - MCP endpoint URL

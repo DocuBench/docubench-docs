@@ -3,60 +3,52 @@
 Browser tools let a connected AI agent operate DocuBench-owned browser tabs.
 They are exposed through MCP and are scoped to the running workbench.
 
-Browser tools do not operate on normal user-controlled tabs.
-
 ## What Agents Can Do
 
-Depending on the tab type and safety rules, an agent can:
+AI agents can use browser tools to operate on the web site, depending on the tab type and safety rules.
 
-- list available MCP tabs
-- create a new general navigation tab
-- navigate a general navigation tab
-- read page content
-- take screenshots
-- click links and buttons
-- type into allowed fields
-- scroll pages
-- use visual coordinate actions for interactions that need screenshots
+| Tool                           | Purpose                                                        |
+| ------------------------------ | -------------------------------------------------------------- |
+| `browser_list_tabs`            | List MCP tabs owned by the current workbench.                  |
+| `browser_navigate`             | Navigate a general MCP tab to a URL.                           |
+| `browser_get_content`          | Read sanitized HTML or text content from a tab.                |
+| `browser_screenshot`           | Capture a tab screenshot as PNG image content.                 |
+| `browser_scroll_tab`           | Scroll the page by a pixel amount.                             |
+| `browser_create_tab`           | Create a new general MCP navigation tab.                       |
+| `browser_click`                | Click a link, button, or interactive icon by selector or text. |
+| `browser_type`                 | Pre-fill an allowed input, textarea, or rich text editor.      |
+| `browser_click_point`          | Click visual coordinates from a screenshot.                    |
+| `browser_drag`                 | Drag between two visual coordinates.                           |
+| `browser_mouse_wheel`          | Send a wheel event at visual coordinates.                      |
+| `browser_keyboard_type`        | Type raw keyboard events into the focused element.             |
+| `browser_history_step_back`    | Navigate back one step in the tab's browser history.           |
+| `browser_history_step_forward` | Navigate forward one step in the tab's browser history.        |
 
-> Screenshot placeholder: AI client tool list showing DocuBench browser tools.
+AI agents should be able to call tool name based on user's natural language instruction. User may
+give AI agents explicit instructions for taking screenshot, or using screenshot image to determine
+click coordinates.
 
-## Read Before Acting
+## Tab Types and Tool Behaviors
 
-Agents should usually inspect a page before interacting with it. A good workflow
-is:
+DocuBench defined 3 MCP tab types:
 
-1. List tabs.
-2. Navigate or select a tab.
-3. Read page content or take a screenshot.
-4. Choose a stable selector, text label, or visual coordinate.
-5. Click, type, scroll, or continue reading.
+| Tab type           | Purpose                                                     |
+| ------------------ | ----------------------------------------------------------- |
+| Navigation tab     | General browsing controlled by workbench navigation policy. |
+| Site Agent tab     | Dedicated tab for one configured website.                   |
+| Developer Host tab | Dedicated tab for local or developer-controlled workflows.  |
 
-## Tab Types
+Some tools may not be allowed to be called by the AI agent in certain tab types.
+For the details of the permission control, refer to [Permission and Safety](../permissions-and-safety/).
 
-DocuBench uses different MCP tab types:
+`browser_get_content` will return different results based on the tab types.
 
-| Tab type | Purpose |
-| --- | --- |
-| Navigation tab | General browsing controlled by workbench navigation policy. |
-| Site agent tab | Dedicated tab for one configured website. |
-| Developer host tab | Dedicated tab for local or developer-controlled workflows. |
+In Navigation tab and Site Agent tab, the html content will be sanitized. The goal
+is to return useful page structure and text while removing behavior,
+presentation noise, tracking artifacts, and large inline graphics that inflate
+the response without helping the AI reason about the page. Sensitive data, such
+as CSRF tokens and hidden session/security form fields, are also removed during
+this sanitization process.
 
-`browser_navigate` is for general navigation tabs. Site agent and developer host
-tabs stay inside their configured site boundary and should be operated with page
-interaction tools.
-
-## Content and Screenshots
-
-`browser_get_content` returns page content that the AI can reason over.
-
-`browser_screenshot` captures visual state when layout, images, canvas content,
-or coordinates matter.
-
-Use screenshots when the page cannot be understood from text alone.
-
-## Related Pages
-
-- [Workbenches](../workbenches/)
-- [Site Agents](../site-agents/)
-- [Permissions and Safety](../permissions-and-safety/)
+In Developer Host tab, the `browser_get_content` will return unmodified HTML
+DOM data for AI agents or workflow.

@@ -2,25 +2,22 @@
 
 A workbench is the DocuBench control surface for one MCP browser environment.
 Each workbench has its own endpoint, token, settings, browser tabs, and optional
-site agents.
+site agent tabs.
 
-Use separate workbenches when you want separate MCP URLs, different allowed
-sites, different tab limits, or different audit settings.
-
-> Screenshot placeholder: Workbench list in the sidebar and selected workbench
-> panel in the main window.
+Use separate workbenches when you want separate AI agents to connect the browser
+environment with different allowed sites, different tab limits, or different audit
+settings.
 
 ## Create a Workbench
 
-1. Open the MCP Workbench section in DocuBench.
-2. Choose New MCP Workbench.
-3. Enter a name.
-4. Create the workbench.
-
+Click the '+' icon next to the "MCP Workbench" header to create a new workbench.
 DocuBench derives the MCP path from the workbench name. For example, a workbench
 named `Research Demo` can use a path like `/mcp/research-demo/`.
 
 ## Start and Stop
+
+DocuBench use one http server to host all running workbenches. The http server
+will bind to localhost on specified port in the System Configuration section.
 
 Start the workbench before connecting an AI client. While the workbench is
 running, DocuBench serves the MCP endpoint and owns the browser tabs used by AI
@@ -31,32 +28,26 @@ tabs.
 
 ## Endpoint and Token
 
-The endpoint tab shows:
-
-- MCP endpoint URL
-- Bearer token
-- Token regeneration control
-- Session idle timeout
-
+Each MCP workbench will has its unique endpoint and bear token.
 Use the endpoint URL and bearer token when configuring an AI client.
 
 Regenerating the token invalidates older client configuration for that
 workbench.
 
-## Navigation Tabs
-
-General navigation tabs are MCP-owned browser tabs that AI agents can use for
-ordinary browsing tasks. Depending on your plan and settings, a workbench may
-have one or more general navigation tabs.
-
 ## Work Folder and Audit Settings
 
-A workbench can use a work folder for saved audit data when audit persistence is
-enabled. Live audit entries are visible in DocuBench during a session even when
-disk persistence is not enabled.
+After the workbench starts, user could monitor and review AI agent's operation
+event log in the Audit Panel. Live audit entries are visible in the workbench
+Audit Panel during a running session. Use it to review navigation attempts,
+approvals, denials, and tool actions.
 
-## Related Pages
+A workbench can use a work folder to save audit data when audit persistence is
+enabled. This is a paid subscription feature.
 
-- [Connect AI Agents](../connect-ai-agents/)
-- [Browser Tools](../browser-tools/)
-- [Permissions and Safety](../permissions-and-safety/)
+## Tiered Features
+
+| Feature                          | Free Tier | Paid Subscriber |
+| -------------------------------- | --------- | --------------- |
+| Workbench Run Time               | 1 hour    | no restriction  |
+| Max Concurrent Running Workbench | 1         | 4               |
+| Audit Persistence                | No        | Yes             |
