@@ -12,6 +12,10 @@ Each workbench has its own MCP endpoint and bearer token. AI clients must use
 the endpoint URL and set the `Authorization` header to `Bearer <token>` before
 they can connect to that workbench.
 
+Workbench servers bind to loopback, so they are intended for clients on your
+local machine. Regenerate a workbench token when older client access should be
+invalidated.
+
 ## Workbench Isolation
 
 A workbench is the control surface for one MCP browser environment. Each
@@ -20,6 +24,10 @@ policy, and optional site agent tabs.
 
 Use separate workbenches when different AI agents or workflows need different
 allowed sites, tab limits, audit settings, or browser state.
+
+DocuBench backend services are not in the MCP session data path. The local
+desktop app owns browser authority, tool validation, tab boundaries, navigation
+policy, and audit handling.
 
 ## AI Agent Tool Permission
 

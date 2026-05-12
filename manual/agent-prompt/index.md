@@ -47,7 +47,7 @@ DocuBench MCP workbench.
 # DocuBench Browser Instructions
 
 Use DocuBench browser tools when the task requires browser access, credential
-gated web sites, webpage inspection, screenshots, or interaction with a web
+gated websites, webpage inspection, screenshots, or interaction with a web
 application.
 
 ## Browser Scope
@@ -73,7 +73,7 @@ application.
 - Use general navigation tabs for ordinary browsing tasks.
 - If navigation is blocked, report the blocked URL and the reason shown by
   DocuBench.
-- Previously denied URL may be changed to approved after the MCP server was
+- A previously denied URL may be approved after the MCP server is
   restarted.
 - If DocuBench asks for navigation approval, wait for the user's decision.
 

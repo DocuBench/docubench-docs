@@ -4,7 +4,7 @@ Add DocuBench as an HTTP MCP server in Claude Code.
 
 ## Add the Server
 
-Use this command to add MCP server with name _docubench-demo_:
+Use this command to add an MCP server named _docubench-demo_:
 
 ```sh
 claude mcp add --scope local --transport http \
@@ -12,7 +12,7 @@ claude mcp add --scope local --transport http \
   --header "Authorization: Bearer <token>"
 ```
 
-Replace the _URL_ and _token_ with the values shown in DocuBench.
+Replace _URL_ and _token_ with the values shown in DocuBench.
 
 ## Verify
 
@@ -24,3 +24,9 @@ claude mcp list
 
 Then start a new Claude Code session and confirm the DocuBench MCP server is
 connected.
+
+## Claude Desktop
+
+Claude desktop application does not support integrating MCP server directly.
+Advanced user may use `mcp-remote` as a stdio bridge. Check official document
+for references.

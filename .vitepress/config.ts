@@ -48,7 +48,7 @@ export default defineConfig({
         ],
       },
       {
-        text: "FAQ",
+        text: "Help",
         items: [
           { text: "Troubleshooting", link: "/manual/faq/" },
           { text: "Agent Prompt", link: "/manual/agent-prompt/" },

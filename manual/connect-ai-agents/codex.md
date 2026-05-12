@@ -1,6 +1,6 @@
 # Codex
 
-Add DocuBench workbench as an MCP server in your Codex configuration.
+Add a DocuBench workbench as an MCP server in your Codex configuration.
 
 ## Codex Desktop Application
 
@@ -12,13 +12,14 @@ Add DocuBench workbench as an MCP server in your Codex configuration.
 3. In the URL field, paste the endpoint URL copied from the workbench.
 4. Each entry in Headers section has two fields:
    1. Enter "Authorization" in the first field.
-   2. Enter "Bear \<token\>" in the second field. The _\<token\>_ value is
-      copied from the workbench "Bear Token" value.
+   2. Enter "Bearer \<token\>" in the second field. The _\<token\>_ value is
+      copied from the workbench "Bearer Token" value.
 
    ![Codex - Setup 2](/images/connect-ai-agents/codex/mcp-setup-codex-app-2.png)
 
-5. After save the settings, you may need to restart the Codex application.
-6. In Codex application, check "MCP servers" setting to confirm the server is connected.
+5. After saving the settings, you may need to restart the Codex application.
+6. In the Codex application, check the "MCP servers" setting to confirm the
+   server is connected.
 
    ![Codex - Setup 3](/images/connect-ai-agents/codex/mcp-setup-codex-app-3.png)
 
@@ -38,10 +39,6 @@ Replace the URL and token with the values shown in the DocuBench workbench.
 
 ## Verify
 
-Use `/mcp` command in your session to list connected MCP server.
+Use the `/mcp` command in your session to list connected MCP servers.
 
 ![Codex - MCP List](/images/connect-ai-agents/codex/mcp-setup-codex-app-mcp-list.png)
-
-# Next Step
-
-Be sure to read the topics in "Use DocuBench" section for usage and security control.

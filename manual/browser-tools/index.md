@@ -5,7 +5,8 @@ They are exposed through MCP and are scoped to the running workbench.
 
 ## What Agents Can Do
 
-AI agents can use browser tools to operate on the web site, depending on the tab type and safety rules.
+AI agents can use browser tools to operate websites, depending on the tab type
+and safety rules.
 
 | Tool                           | Purpose                                                        |
 | ------------------------------ | -------------------------------------------------------------- |
@@ -24,13 +25,13 @@ AI agents can use browser tools to operate on the web site, depending on the tab
 | `browser_history_step_back`    | Navigate back one step in the tab's browser history.           |
 | `browser_history_step_forward` | Navigate forward one step in the tab's browser history.        |
 
-AI agents should be able to call tool name based on user's natural language instruction. User may
-give AI agents explicit instructions for taking screenshot, or using screenshot image to determine
-click coordinates.
+AI agents should choose tool calls based on the user's natural language
+instruction. You can also explicitly ask an agent to take a screenshot or use a
+screenshot to determine click coordinates.
 
 ## Tab Types and Tool Behaviors
 
-DocuBench defined 3 MCP tab types:
+DocuBench defines three MCP tab types:
 
 | Tab type           | Purpose                                                     |
 | ------------------ | ----------------------------------------------------------- |
@@ -38,17 +39,17 @@ DocuBench defined 3 MCP tab types:
 | Site Agent tab     | Dedicated tab for one configured website.                   |
 | Developer Host tab | Dedicated tab for local or developer-controlled workflows.  |
 
-Some tools may not be allowed to be called by the AI agent in certain tab types.
-For the details of the permission control, refer to [Permission and Safety](../permissions-and-safety/).
+Some tools are restricted in certain tab types. For details, see
+[Permissions and Safety](../permissions-and-safety/).
 
-`browser_get_content` will return different results based on the tab types.
+`browser_get_content` returns different results based on the tab type.
 
-In Navigation tab and Site Agent tab, the html content will be sanitized. The goal
-is to return useful page structure and text while removing behavior,
+In Navigation tabs and Site Agent tabs, HTML content is sanitized. The goal is
+to return useful page structure and text while removing behavior,
 presentation noise, tracking artifacts, and large inline graphics that inflate
 the response without helping the AI reason about the page. Sensitive data, such
 as CSRF tokens and hidden session/security form fields, are also removed during
 this sanitization process.
 
-In Developer Host tab, the `browser_get_content` will return unmodified HTML
-DOM data for AI agents or workflow.
+In Developer Host tabs, `browser_get_content` returns unmodified HTML DOM data
+for agent-assisted development workflows.

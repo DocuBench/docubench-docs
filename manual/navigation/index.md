@@ -1,17 +1,17 @@
 # Navigation Control
 
-## Navigation Tabs Setting
+## Navigation Tab Settings
 
 General navigation tabs are MCP-owned browser tabs that AI agents can use for
 ordinary browsing tasks. Depending on your plan and settings, a workbench may
 have one or more general navigation tabs.
 
-DocuBench maintains workbench-wise and global allow list and deny list to control
-which web site AI agent may visit.
+DocuBench maintains workbench-level and global allow lists and deny lists to
+control which websites AI agents may visit.
 
 Before you start the workbench, you may modify the hosts in the allow list and
-deny list, and specify the workbench approval behavior when AI agent navigates
-to a new web site.
+deny list, and specify the workbench approval behavior when an AI agent
+navigates to a new website.
 
 ## Navigation Approval
 
@@ -26,8 +26,8 @@ The workbench policy decides what happens:
 | Manual approval | DocuBench asks you to approve or deny the site. |
 
 When manual approval is configured, DocuBench shows a pending approval panel in
-the workbench and send a system notification.
+the workbench and sends a system notification.
 
 ![Approval Panel](/images/manual/approval-panel.png)
 
-Your approval or deny decision will be recorded in the allow list and deny list.
+Your approve or deny decision is recorded in the allow list or deny list.

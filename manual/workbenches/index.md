@@ -5,8 +5,8 @@ Each workbench has its own endpoint, token, settings, browser tabs, and optional
 site agent tabs.
 
 Use separate workbenches when you want separate AI agents to connect the browser
-environment with different allowed sites, different tab limits, or different audit
-settings.
+environment with different allowed sites, different tab limits, or different
+audit settings.
 
 ## Create a Workbench
 
@@ -16,8 +16,8 @@ named `Research Demo` can use a path like `/mcp/research-demo/`.
 
 ## Start and Stop
 
-DocuBench use one http server to host all running workbenches. The http server
-will bind to localhost on specified port in the System Configuration section.
+DocuBench uses one HTTP server to host all running workbenches. The HTTP server
+binds to localhost on the port specified in the System Configuration section.
 
 Start the workbench before connecting an AI client. While the workbench is
 running, DocuBench serves the MCP endpoint and owns the browser tabs used by AI
@@ -28,7 +28,7 @@ tabs.
 
 ## Endpoint and Token
 
-Each MCP workbench will has its unique endpoint and bear token.
+Each MCP workbench has its own endpoint and bearer token.
 Use the endpoint URL and bearer token when configuring an AI client.
 
 Regenerating the token invalidates older client configuration for that
@@ -36,9 +36,9 @@ workbench.
 
 ## Work Folder and Audit Settings
 
-After the workbench starts, user could monitor and review AI agent's operation
+After the workbench starts, you can monitor and review the AI agent's operation
 event log in the Audit Panel. Live audit entries are visible in the workbench
-Audit Panel during a running session. Use it to review navigation attempts,
+Audit Panel during a running session. Use the panel to review navigation attempts,
 approvals, denials, and tool actions.
 
 A workbench can use a work folder to save audit data when audit persistence is
@@ -48,6 +48,6 @@ enabled. This is a paid subscription feature.
 
 | Feature                          | Free Tier | Paid Subscriber |
 | -------------------------------- | --------- | --------------- |
-| Workbench Run Time               | 1 hour    | no restriction  |
-| Max Concurrent Running Workbench | 1         | 4               |
+| Workbench run time               | 1 hour    | No restriction  |
+| Max concurrent running workbench | 1         | 4               |
 | Audit Persistence                | No        | Yes             |

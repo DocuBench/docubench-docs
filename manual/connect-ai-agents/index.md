@@ -10,13 +10,13 @@ Each client setup guide uses the same values from DocuBench:
 
 ![System and MCP Config](/images/connect-ai-agents/mcp-config.png)
 
-You can use "Copy URL" and "Copy" buttons to copy the values and paste to your
-MCP server config.
+Use the "Copy URL" and "Copy" buttons to copy these values into your MCP server
+configuration.
 
 ## General Setup Pattern
 
-1. In AI Agent, add a new MCP server and select "Streamable HTTP" type.
-2. Copy the workbench MCP endpoint URL and set as server URL.
+1. In your AI agent, add a new MCP server and select the "Streamable HTTP" type.
+2. Copy the workbench MCP endpoint URL and set it as the server URL.
 3. Copy the bearer token.
 4. Set the `Authorization` header to `Bearer <token>`.
 5. Restart or refresh the AI client session.
