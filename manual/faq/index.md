@@ -17,7 +17,7 @@ Check:
 
 Restart or refresh the AI client session after adding the MCP server.
 
-If a site agent tab was just started or stopped, refresh the client tool list when
+If a Site Agent tab was just started or stopped, refresh the client tool list when
 your client supports it.
 
 ## Authorization Fails

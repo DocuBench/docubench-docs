@@ -1,8 +1,7 @@
 # Workbenches
 
 A workbench is the DocuBench control surface for one MCP browser environment.
-Each workbench has its own endpoint, token, settings, browser tabs, and optional
-site agent tabs.
+Each workbench has its own endpoint, token, settings, and MCP tabs.
 
 Use separate workbenches when you want separate AI agents to connect the browser
 environment with different allowed sites, different tab limits, or different

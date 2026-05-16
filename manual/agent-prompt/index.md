@@ -10,7 +10,7 @@ For Codex, add the guidance to `AGENTS.md`. For Claude Code, add the guidance to
 
 DocuBench exposes browser tools through MCP. The agent can list tabs, navigate
 general MCP navigation tabs, read page content, take screenshots, click, type,
-scroll, and operate on site agent tabs.
+scroll, and operate on Site Agent tabs.
 
 Project-level prompt guidance helps the agent:
 
@@ -37,6 +37,23 @@ Add guidance for:
 
 Do not include bearer tokens, passwords, API keys, or private URLs that should
 not be shared with the agent.
+
+## Minimal Prompt
+
+For a smaller project, this shorter version is usually enough.
+
+```md
+# DocuBench
+
+Use DocuBench MCP browser tools for browser tasks. Start by listing MCP tabs.
+Operate only on MCP-owned tabs. Use general navigation tabs for browsing, and
+keep Site Agent tabs or Developer Host tabs inside their configured site boundary.
+
+Read page content before acting. Use screenshots when visual state, layout,
+canvas content, or coordinates matter. Respect navigation approval and report
+blocked actions instead of retrying them. Do not put secrets in site
+instruction, prompts, browser-visible text, or markdown files.
+```
 
 ## Sample AGENTS.md for Codex
 
@@ -162,21 +179,4 @@ tools.
   other DocuBench safety results.
 - If page content is incomplete, say whether you used content extraction,
   screenshots, scrolling, or waiting to verify the state.
-```
-
-## Minimal Prompt
-
-For a smaller project, this shorter version is usually enough.
-
-```md
-# DocuBench
-
-Use DocuBench MCP browser tools for browser tasks. Start by listing MCP tabs.
-Operate only on MCP-owned tabs. Use general navigation tabs for browsing, and
-keep site agent or developer host tabs inside their configured site boundary.
-
-Read page content before acting. Use screenshots when visual state, layout,
-canvas content, or coordinates matter. Respect navigation approval and report
-blocked actions instead of retrying them. Do not put secrets in site
-instruction, prompts, browser-visible text, or markdown files.
 ```

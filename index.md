@@ -16,5 +16,5 @@ features:
   - title: Use browser workbenches
     details: Learn how workbenches, MCP tabs, site instruction, and tool permissions fit together.
   - title: Stay in control
-    details: Understand approvals, navigation limits, and AI agent operation audit.
+    details: Understand approvals, navigation limits, and AI agent activity audit.
 ---

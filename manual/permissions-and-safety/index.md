@@ -20,7 +20,7 @@ invalidated.
 
 A workbench is the control surface for one MCP browser environment. Each
 workbench has its own endpoint, token, settings, browser tabs, navigation
-policy, and optional site agent tabs.
+policy, and optional Site Agent tabs.
 
 Use separate workbenches when different AI agents or workflows need different
 allowed sites, tab limits, audit settings, or browser state.
