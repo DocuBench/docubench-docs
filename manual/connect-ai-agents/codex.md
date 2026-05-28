@@ -4,6 +4,10 @@ Add a DocuBench workbench as an MCP server in your Codex configuration.
 
 ## Codex Desktop Application
 
+The following steps have been verified on Mac. Codex Desktop for Windows has issue
+setting up MCP server through UI. You may need to add it manually in the config file.
+Follow the instruction in the section "Code CLI".
+
 1. Open application Settings, select "MCP servers", then click "Add server".
 
    ![Codex - Setup 1](/images/connect-ai-agents/codex/mcp-setup-codex-app-1.png)
@@ -25,7 +29,7 @@ Add a DocuBench workbench as an MCP server in your Codex configuration.
 
 ## Codex CLI
 
-Create or edit your Codex configuration file and add a DocuBench MCP server.
+Create or edit your Codex config file and add a DocuBench MCP server.
 
 ```toml
 [mcp_servers.docubench-demo]
@@ -36,6 +40,11 @@ Authorization = "Bearer <token>"
 ```
 
 Replace the URL and token with the values shown in the DocuBench workbench.
+
+The default config file location is at:
+
+- Mac: `~/.codex/config.toml`
+- Windows: `%USERPROFILE%\\.codex\\config.toml`
 
 ## Verify
 
