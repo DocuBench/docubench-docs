@@ -12,6 +12,16 @@ Check:
 - The client uses the exact MCP endpoint URL shown in DocuBench.
 - The client includes the bearer token in the `Authorization` header.
 - The token has not been regenerated since the client was configured.
+- Some AI Client, such as Codex Desktop application, need to restart to pick up the MCP server setup.
+
+## Cannot Connect to the DocuBench from Agent in Container
+
+If you are running AI agent, such as Codex or Claude Code, inside a container,
+and the DocuBench application is running on the host system, you need to change
+bind address and connection URL.
+
+1. Change the bind address to 0.0.0.0 for the DocuBench system.
+2. For the agent in the container, you should change the url host to `host.docker.internal`.
 
 ## DocuBench Tools Do Not Appear
 
